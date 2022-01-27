@@ -7,7 +7,7 @@ struct node{
 };
 
 
-void add_last(struct node *ptr, int data);
+void add_last(struct node **ptr, int data);
 
 
 int main(int argc, const char* argv){
@@ -21,7 +21,8 @@ int main(int argc, const char* argv){
 			"Populating linked list now!\n");
 
 	for(int i = 0; i < 32; i++){
-		add_last(head, i);
+		add_last(&head, i);
+		printf("%d\n", i);
 	}
 
 	//print_List(head);
@@ -30,19 +31,17 @@ int main(int argc, const char* argv){
 }
 
 
-void add_last(struct node *head, int data){
+void add_last(struct node **head, int data){
 
-	struct node *newNode = (struct node*)malloc(sizeof(struct node*));
-	struct node *tmp = NULL;
+	struct node *newNode = (struct node*)malloc(sizeof(struct node));
 
 	newNode->data = data;
-	newNode->next = head;
+	newNode->next = NULL;
 
 	if(head == NULL){
-		head = newNode;
-		return;
-	} else{
-		tmp = head;
+		*head = newNode;
+	} else {
+		struct node *tmp = *head;
 
 		while(tmp->next != NULL){
 			tmp = tmp->next;
@@ -50,9 +49,6 @@ void add_last(struct node *head, int data){
 
 		tmp->next = newNode; // link to the list 
 	} 
-
-	free(tmp);
-	return;
 }
 
 
