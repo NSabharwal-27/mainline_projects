@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define TRUE 1
+#define FALSE 0
+
 struct node{
 	int data;
 	struct node* next;
@@ -8,6 +11,11 @@ struct node{
 
 void add_last(struct node **ptr, int data);
 void print_list(struct node *ptr);
+int isEmpty(struct node *head);
+
+int isEmpty(struct node *head){
+    (head == NULL) ? (return TRUE) : (return FALSE);
+}
 
 
 void print_list(struct node *head){
@@ -31,7 +39,7 @@ void add_last(struct node **head, int data){
 	if(*head == NULL){
 		*head = newNode;
 		return;
-	} 
+	}
 
 	struct node *tmp = *head;
 

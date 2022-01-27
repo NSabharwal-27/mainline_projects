@@ -22,6 +22,9 @@ int main(int argc, const char* argv){
 		size++;
 	} // terminates when the size of the list has reached max allowable size of the linked list
 
+
+	//next step is to sort this linked list using merge sort
+
 	print_list(head);
 
 	return 0;
