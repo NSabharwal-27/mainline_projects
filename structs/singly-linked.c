@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <iostream>
 
 struct node{
 	int data;
@@ -9,25 +9,8 @@ struct node{
 
 
 int main(int argc, const char* argv){
+
+	printf("Initializing linked list\n");	
 	
-	//create a head;
-	struct node* head = NULL;
-	head->data = 0;
-
-
-	//add to the head
-	struct node* mid = NULL;
-	mid->data = 1;
-
-	
-	struct node* last = NULL;
-	last->data = 2;
-	
-
-	head->next = mid;
-	mid->next = last;
-
-
-
 	return 0;
 }
