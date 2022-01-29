@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TRUE 1
-#define FALSE 0
-
 struct node{
 	int data;
 	struct node* next;
@@ -21,15 +18,28 @@ int isEmpty(struct node *head){
 
 
 void print_list(struct node *head){
-
-	//struct node *temp = head;
-
 	while(head != NULL){
 		printf("%d\n", head->data);
 		head = head->next;
 	}
 }
 
+void add_first(struct node **head, int data){
+
+	struct node *newNode = (struct node*)malloc(sizeof(struct node));
+	
+	newNode->data = data;
+	newNode->next = NULL;
+
+	if (*head == NULL){
+		*head = newNode;
+		return;
+	}
+
+	newNode->next = *head;
+	*head = newNode;
+	return;
+}
 
 void add_last(struct node **head, int data){	
 
