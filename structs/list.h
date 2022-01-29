@@ -14,7 +14,9 @@ void print_list(struct node *ptr);
 int isEmpty(struct node *head);
 
 int isEmpty(struct node *head){
-    (head == NULL) ? (return TRUE) : (return FALSE);
+    if (head == NULL)
+		return 1;
+	return 0;
 }
 
 
