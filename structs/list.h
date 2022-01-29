@@ -7,6 +7,7 @@ struct node{
 };
 
 void add_last(struct node **ptr, int data);
+void add_first(struct node **ptr, int data);
 void print_list(struct node *ptr);
 int isEmpty(struct node *head);
 
@@ -22,6 +23,7 @@ void print_list(struct node *head){
 		printf("%d\n", head->data);
 		head = head->next;
 	}
+	return;
 }
 
 void add_first(struct node **head, int data){
