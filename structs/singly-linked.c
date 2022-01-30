@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
+#include "merge.h"
 
+int size = 0; /* track the size of the linked list  need this for the merge sort command later */
 
 int main(int argc, const char* argv){
 
 	int random = 0;
-	int size = 0; /* track the size of the linked list  need this for the merge sort command later */
 	int max_size = rand() % 30; // randomly size the linked list to keep things fun 
 	printf("initializing linked list\n");
 	
@@ -24,7 +25,9 @@ int main(int argc, const char* argv){
 	print_list(head);
 
 	//next step is to sort this linked list using merge sort
-	
+
+	mergesort();
+
 	return 0;
 }
 
