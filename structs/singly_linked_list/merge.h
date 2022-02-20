@@ -20,9 +20,3 @@ void mergeSort(struct node **head){
 
     return;
 }
-
-
-// struct node* half_split(struct node **head, struct node **first_half, struct node **second_half){
-
-//     return;
-// }

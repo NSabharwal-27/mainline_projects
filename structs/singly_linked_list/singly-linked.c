@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "list.h"
-#include "merge.h"
+//#include "merge.h"
 
 int size = 0; /* track the size of the linked list  need this for the merge sort command later */
 
@@ -26,8 +26,10 @@ int main(int argc, const char* argv){
 
 	//next step is to sort this linked list using merge sort
 
-	mergesort();
+	add_last(&head, 69);
 
+
+	//free(head);
 	return 0;
 }
 

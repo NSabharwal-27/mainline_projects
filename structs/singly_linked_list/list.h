@@ -19,17 +19,19 @@ int isEmpty(struct node *head){
 
 
 void print_list(struct node *head){
-	while(head != NULL){
-		printf("%d\n", head->data);
-		head = head->next;
+	struct node *runner = head;
+	while(runner != NULL){
+		printf("%d\n", runner->data);
+		runner = runner->next;
 	}
+	free(runner);
 	return;
 }
 
 void add_first(struct node **head, int data){
 
 	struct node *newNode = (struct node*)malloc(sizeof(struct node));
-	
+
 	newNode->data = data;
 	newNode->next = NULL;
 
@@ -40,6 +42,8 @@ void add_first(struct node **head, int data){
 
 	newNode->next = *head;
 	*head = newNode;
+
+	free(newNode);
 	return;
 }
 
@@ -62,5 +66,7 @@ void add_last(struct node **head, int data){
 	// exits when tmp->next == null
 
 	tmp->next = newNode; // link to the list 
+
+	free(tmp);
 	return;
 }
